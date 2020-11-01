@@ -1,9 +1,9 @@
 package models
 
 import (
-	"github.com/jinzhu/gorm"
-)
+	"gorm.io/gorm"
 
+)
 // User -> model for user entity
 type User struct {
 	gorm.Model

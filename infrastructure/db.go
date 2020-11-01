@@ -15,11 +15,11 @@ type Database struct {
 // NewDatabase creates a new database instance
 func NewDatabase(logger Logger) Database {
 
-	username := os.Getenv("DBUsername")
-	password := os.Getenv("DBPassword")
-	host := os.Getenv("DBHost")
-	port := os.Getenv("DBPort")
-	dbname := os.Getenv("DBName")
+	username := os.Getenv("DB_USER")
+	password := os.Getenv("DB_PASS")
+	host := os.Getenv("DB_HOST")
+	port := os.Getenv("DB_PORT")
+	dbname := os.Getenv("DB_NAME")
 
 	url := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", username, password, host, port, dbname)
 

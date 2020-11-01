@@ -21,8 +21,8 @@ func NewLogger() Logger {
 		config.EncoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
 	}
 
-	if os.Getenv("ENVIRONMENT") == "production" && os.Getenv("LOGOUTPUT") != "" {
-		config.OutputPaths = []string{os.Getenv("LOGOUTPUT")}
+	if os.Getenv("ENVIRONMENT") == "production" && os.Getenv("LOG_OUTPUT") != "" {
+		config.OutputPaths = []string{os.Getenv("LOG_OUTPUT")}
 	}
 
 	logger, _ := config.Build()
