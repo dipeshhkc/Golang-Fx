@@ -6,15 +6,11 @@ import (
 )
 
 //UserRoutes -> setting routes for user entity
-func UserRoutes(logger infrastructure.Logger, controller controllers.UserController) {
+func UserRoutes(routes infrastructure.GinRouter, logger infrastructure.Logger, controller controllers.UserController) {
 	logger.Zap.Info("Setting up user routes")
-	{
 
-		// client.GET("/", controller.)
-
-	}
-	clientAssigned := s.Handler.Gin.Group("/clients-assigned-to").Use(s.AuthMiddleware.Handle())
+	userGroup := routes.Gin.Group("/clients-assigned-to")
 	{
-		clientAssigned.GET("/:id", s.Controller.GetAllClientAssigned())
+		userGroup.GET("/", controller.GetAllUser)
 	}
 }

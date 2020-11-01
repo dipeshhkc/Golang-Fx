@@ -22,7 +22,8 @@ func NewUserController(repository repository.UserRepository, logger infrastructu
 	}
 }
 
-func (u UserController) getAllUser(c *gin.Context) {
+//GetAllUser -> get all users
+func (u UserController) GetAllUser(c *gin.Context) {
 	users, _ := u.repository.GetAll()
 	c.JSON(http.StatusOK, users)
 }
