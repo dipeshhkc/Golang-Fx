@@ -2,8 +2,8 @@ package models
 
 import (
 	"gorm.io/gorm"
-
 )
+
 // User -> model for user entity
 type User struct {
 	gorm.Model
