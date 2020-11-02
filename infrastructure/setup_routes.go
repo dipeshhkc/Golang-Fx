@@ -24,7 +24,7 @@ func SetupRoutes() GinRouter {
 	}))
 
 	httpRouter.GET("/health-check", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"data": "TeamPlace Production API Server are Running..."})
+		c.JSON(http.StatusOK, gin.H{"data": "GOlang FX Up and Running"})
 	})
 
 	return GinRouter{
