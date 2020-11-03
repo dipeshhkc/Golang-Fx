@@ -1,6 +1,6 @@
 FROM golang:alpine
 
-WORKDIR /teamplace
+WORKDIR /golang-fx
 
 ADD . .
 
@@ -8,4 +8,4 @@ RUN go mod download
 
 RUN go get github.com/githubnemo/CompileDaemon
 
-ENTRYPOINT CompileDaemon -command="./teamplace-api"
+ENTRYPOINT CompileDaemon -command="./golang-fx"
