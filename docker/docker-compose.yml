@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/app.dockerfile
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/golang-fx
+    env_file: .env
+    depends_on:
+      - database
+    container_name: golang-fx-web
+    environment:
+      - 'DB_PORT=3306'
+      - 'DB_HOST=database'
+
+  database:
+    build: 
+      context: .
+      dockerfile: ./docker/db.dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: golang-fx
+    container_name: golang-fx-db
+    ports:
+      - 33066:3306
+    volumes:
+      - golang-fxdata:/var/lib/mysql 
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - database
+    ports:
+      - 5001:80
+    environment:
+      - 'PMA_HOST=database'
+      - 'PMA_PORT=3306'
+    container_name: golang-fx-pma
+
+
+# persisted storage
+volumes:
+  golangFxdata:
