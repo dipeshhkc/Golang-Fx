@@ -1,2 +1,4 @@
-log
 .env
+golang.log
+golang-fx
+serviceAccountKey.json
