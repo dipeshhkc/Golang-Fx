@@ -1,14 +1,14 @@
 package main
 
 import (
-	"golang-fx/bootstrap"
-	"golang-fx/utils"
+	"golang-fx/app"
+	"golang-fx/infrastructure"
 
 	"go.uber.org/fx"
 )
 
 func main() {
-	utils.LoadEnv()
-	fx.New(bootstrap.Module).Run()
+	infrastructure.LoadEnv()
+	fx.New(app.Module).Run()
 
 }

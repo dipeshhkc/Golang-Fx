@@ -2,7 +2,7 @@ package repository
 
 import "go.uber.org/fx"
 
-//Module exports dependency
+//Module exports repository dependency
 var Module = fx.Options(
-	fx.Provide(NewUserRepository),
+// fx.Provide(),
 )

@@ -28,7 +28,7 @@ services:
       MYSQL_DATABASE: golang-fx
     container_name: golang-fx-db
     ports:
-      - 33066:3306
+      - 33067:3306
     volumes:
       - golang-fx-data:/var/lib/mysql 
 
